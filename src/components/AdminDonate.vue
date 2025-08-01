@@ -1,3 +1,8 @@
 <template>
-    <p>admin Donate</p>
+<SideNaveBar></SideNaveBar>
 </template>
+
+
+<script setup>
+import SideNaveBar from './SideNaveBar.vue';
+</script>

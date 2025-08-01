@@ -1,3 +1,8 @@
 <template>
-    <p>Admin Projects</p>
+<SideNaveBar></SideNaveBar>
 </template>
+
+
+<script setup>
+import SideNaveBar from './SideNaveBar.vue';
+</script>
