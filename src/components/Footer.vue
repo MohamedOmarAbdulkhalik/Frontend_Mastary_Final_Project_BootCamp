@@ -1,5 +1,5 @@
 <template>
-        <footer class="bg-gray-900 text-white py-10 mt-12">
+        <footer class="bg-gray-900 text-white py-5 mt-12">
         <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
             <div>
                 <img src="../../images/logo.webp" class="h-16 mb-4" />
