@@ -7,6 +7,7 @@ import Dashboard from '@/components/Dashboard.vue'
 import AdminDonate from '@/components/AdminDonate.vue'
 import AdminExpenses from '@/components/AdminExpenses.vue'
 import AdminProjects from '@/components/AdminProjects.vue'
+import ProjectDetails from '@/components/ProjectDetails.vue'
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: '/AdminProjects',
     name: 'AdminProjects',
     component: AdminProjects
+  },
+  {
+    path:'/ProjectDetails/:id',
+    name:'ProjectDetails',
+    component:ProjectDetails
   }
 ]
 
@@ -52,3 +58,5 @@ const router = createRouter({
 })
 
 export default router
+
+
