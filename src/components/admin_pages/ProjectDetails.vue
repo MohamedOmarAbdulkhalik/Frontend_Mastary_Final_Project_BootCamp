@@ -48,7 +48,6 @@
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import AdminLayout from "./components/AdminLayout.vue";
-import AdminLayout from "./components/AdminLayout.vue";
 
 const route = useRoute();
 const project = ref(null);
