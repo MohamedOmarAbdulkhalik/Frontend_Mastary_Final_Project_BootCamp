@@ -1,10 +1,10 @@
 <template>
 <AdminLayout>
   <div class="container mx-auto px-4 py-10">
-    <h2 class="text-3xl font-extrabold text-center mb-8">All Donations</h2>
-
+    <h2 class="text-3xl p-4 font-extrabold text-center mb-8">All Donations</h2>
+<div class="flex flex-col gap-10">
     <!-- ✅ التبرعات العامة -->
-    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg mb-12">
+    <div class="bg-white dark:bg-gray-900 p-6 m-6 rounded-xl shadow-lg mb-12">
       <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">General Donations</h3>
 
       <table class="w-full border-collapse border border-gray-300 dark:border-gray-700">
@@ -71,7 +71,7 @@
         </tbody>
       </table>
     </div>
-
+</div>
     <!-- ✅ نافذة إسناد التبرع -->
     <div
       v-if="showAssignModal"

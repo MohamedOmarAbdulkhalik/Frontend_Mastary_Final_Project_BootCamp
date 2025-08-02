@@ -3,40 +3,44 @@
 <Header></Header>
   <div class="container mx-auto px-4 py-10">
     <!-- ✅ التبرع العام -->
-    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg max-w-lg mx-auto mb-10">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-5">
-        General Donation
-      </h2>
+  <!-- ✅ التبرع العام -->
+<div class="flex justify-center mb-10">
+  <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg max-w-lg w-full">
+    <h2 class="text-2xl p-4 font-bold text-gray-900 dark:text-white text-center mb-5">
+      General Donation
+    </h2>
 
-      <form @submit.prevent="makeGeneralDonation" class="space-y-3">
-        <input
-          v-model="generalDonation.name"
-          type="text"
-          placeholder="Your Name"
-          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-          required
-        />
+    <form @submit.prevent="makeGeneralDonation" class="space-y-3">
+      <input
+        v-model="generalDonation.name"
+        type="text"
+        placeholder="Your Name"
+        class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
+        required
+      />
 
-        <input
-          v-model.number="generalDonation.amount"
-          type="number"
-          min="1"
-          placeholder="Donation Amount ($)"
-          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-          required
-        />
+      <input
+        v-model.number="generalDonation.amount"
+        type="number"
+        min="1"
+        placeholder="Donation Amount ($)"
+        class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
+        required
+      />
 
-        <button
-          type="submit"
-          class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-semibold"
-        >
-          Donate
-        </button>
-      </form>
-    </div>
+      <button
+        type="submit"
+        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-semibold"
+      >
+        Donate
+      </button>
+    </form>
+  </div>
+</div>
+
 
     <!-- ✅ عنوان المشاريع -->
-    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-10 text-center">
+    <h2 class="text-3xl p-4 md:text-4xl font-extrabold text-gray-900 mb-10 text-center">
       Available Projects
     </h2>
 
