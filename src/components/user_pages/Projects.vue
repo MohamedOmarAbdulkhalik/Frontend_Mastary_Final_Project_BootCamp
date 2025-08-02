@@ -134,11 +134,13 @@
       </div>
     </div>
   </div>
+  <Footer></Footer>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 
 const projects = ref([]);
 const donations = ref([]);

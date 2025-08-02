@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+  <div class="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
     <!-- ✅ الهيدر -->
     <header
       class="flex justify-between items-center px-4 py-3 bg-white dark:bg-black shadow-md relative z-50"
@@ -78,15 +78,15 @@
       </div>
     </header>
 
-    <!-- ✅ المحتوى -->
-    <div class="flex">
-      <!-- ✅ Sidebar -->
+    <!-- ✅ المحتوى + السيدبار -->
+    <div class="flex flex-1">
+      <!-- Sidebar -->
       <aside
         :class="[
-          'fixed md:static top-16 left-0 w-64 bg-white dark:bg-gray-900 shadow-lg z-40 transition-transform duration-300',
+          'fixed md:static top-16 left-0 w-44 bg-white dark:bg-gray-900 shadow-lg z-40 transition-transform duration-300',
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         ]"
-        style="height: calc(100vh - 64px)"
+        
       >
         <div
           class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700 md:hidden"
@@ -133,8 +133,41 @@
       </aside>
 
       <!-- ✅ Main Content -->
-      <main class="flex-1 ml-0 md:ml-64 p-4 transition-all duration-300">
-        <slot />
+      <main class="flex-1 ml-0 md:ml-64 p-4 transition-all duration-300 flex flex-col">
+        <div class="flex-grow">
+          <slot />
+        </div>
+
+        <!-- ✅ Footer -->
+        <footer class="bg-gray-900 text-white py-5 mt-8">
+          <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div>
+              <img src="../../../../images/logo.webp" class="h-16 mb-4" />
+              <p class="text-gray-400">
+                Karama Foundation is committed to promoting equality...
+              </p>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><router-link to="/">Home</router-link></li>
+                <li><router-link to="/Projects">Projects</router-link></li>
+                <li><router-link to="/AdminDonate">Donate</router-link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-semibold mb-3">Contact</h4>
+              <p>Email: info@karama.org</p>
+              <p>Phone: +123 456 789</p>
+            </div>
+          </div>
+
+          <div class="text-center text-gray-500 mt-8">
+            &copy; 2025 Karama Foundation. All rights reserved.
+          </div>
+        </footer>
       </main>
     </div>
   </div>
@@ -150,11 +183,7 @@ onMounted(() => {
   const savedMode = localStorage.getItem("darkMode");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  if (savedMode !== null) {
-    isDark.value = savedMode === "true";
-  } else if (prefersDark) {
-    isDark.value = true;
-  }
+  isDark.value = savedMode !== null ? savedMode === "true" : prefersDark;
   updateDarkMode();
 });
 
