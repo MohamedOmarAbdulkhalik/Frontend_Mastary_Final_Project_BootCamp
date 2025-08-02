@@ -46,7 +46,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import SideNaveBar from "./SideNaveBar.vue";
+import SideNaveBar from "./components/SideNaveBar.vue";
 
 const route = useRoute();
 const project = ref(null);

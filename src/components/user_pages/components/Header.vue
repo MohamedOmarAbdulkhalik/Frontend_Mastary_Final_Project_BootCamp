@@ -2,7 +2,7 @@
     <header class="flex justify-between  items-center px-4 bg-white dark:bg-black shadow-md transition-colors duration-300">
         <!--  Logo -->
         <div class="flex items-center gap-2">
-            <img class="w-14" src="../../images/logo.webp" alt="Logo">
+            <img class="w-14" src="../../../../images/logo.webp" alt="Logo">
         </div>
 
         <!--  Navigation Links -->

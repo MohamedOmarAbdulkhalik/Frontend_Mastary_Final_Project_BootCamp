@@ -112,7 +112,7 @@
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
-import SideNaveBar from "./SideNaveBar.vue";
+import SideNaveBar from "./components/SideNaveBar.vue";
 
 
 const donations = ref([]);

@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Home from '@/components/Home.vue'
-import Projects from '@/components/Projects.vue'
-import Donate from '@/components/Donate.vue'
-import Dashboard from '@/components/Dashboard.vue'
-import AdminDonate from '@/components/AdminDonate.vue'
-import AdminExpenses from '@/components/AdminExpenses.vue'
-import AdminProjects from '@/components/AdminProjects.vue'
-import ProjectDetails from '@/components/ProjectDetails.vue'
+import Home from '@/components/user_pages/Home.vue'
+import Projects from '@/components/user_pages/Projects.vue'
+import Donate from '@/components/user_pages/Donate.vue'
+import Dashboard from '@/components/admin_pages/Dashboard.vue'
+import AdminDonate from '@/components/admin_pages/AdminDonate.vue'
+import AdminExpenses from '@/components/admin_pages/AdminExpenses.vue'
+import AdminProjects from '@/components/admin_pages/AdminProjects.vue'
+import ProjectDetails from '@/components/admin_pages/ProjectDetails.vue'
 
 const routes = [
   {

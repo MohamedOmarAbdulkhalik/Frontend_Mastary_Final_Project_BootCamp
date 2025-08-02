@@ -138,7 +138,6 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import SideNaveBar from "./SideNaveBar.vue";
 
 const projects = ref([]);
 const donations = ref([]);

@@ -81,7 +81,7 @@
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
-import SideNaveBar from "./SideNaveBar.vue";
+import SideNaveBar from "./components/SideNaveBar.vue";
 
 const projects = ref([]);
 const form = ref({

@@ -55,9 +55,9 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import SideNaveBar from "./SideNaveBar.vue";
-import DashboardCard from "./DashboardCard.vue";
-import DashboardTable from "./DashboardTable.vue";
+import SideNaveBar from "./components/SideNaveBar.vue";
+import DashboardCard from "./components/DashboardCard.vue";
+import DashboardTable from "./components/DashboardTable.vue";
 
 const projects = ref([]);
 const donations = ref([]);
