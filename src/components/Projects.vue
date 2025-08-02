@@ -1,5 +1,5 @@
 <template>
-  <SideNaveBar />
+
 
   <div class="container mx-auto px-4 py-10">
     <!-- ✅ التبرع العام -->
