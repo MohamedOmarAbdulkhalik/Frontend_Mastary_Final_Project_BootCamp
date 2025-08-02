@@ -1,96 +1,56 @@
 <template>
   <div class="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
     <!-- ✅ الهيدر -->
-    <header
-      class="flex justify-between items-center px-4 py-3 bg-white dark:bg-black shadow-md relative z-50"
-    >
+    <!-- الهيدر -->
+    <header class="flex justify-between items-center px-4 py-3 bg-white dark:bg-black shadow-md relative z-50">
       <!-- Logo -->
       <div class="flex items-center gap-2">
         <img class="w-14" src="../../../../images/logo.webp" alt="Logo" />
       </div>
 
-      <!-- Navigation Links (Hidden on small screens) -->
+      <!-- روابط التنقل (تظهر فقط على الشاشات الكبيرة) -->
       <nav class="hidden md:flex gap-6">
-        <router-link
-          class="text-[#bb8e4a] font-bold text-xl hover:text-black dark:hover:text-white"
-          to="/"
-          >Home</router-link
-        >
-        <router-link
-          class="text-[#bb8e4a] font-bold text-xl hover:text-black dark:hover:text-white"
-          to="/Projects"
-          >Projects</router-link
-        >
-        <router-link
-          class="text-[#bb8e4a] font-bold text-xl hover:text-black dark:hover:text-white"
-          to="/Dashboard"
-          >Dashboard</router-link
-        >
+        <router-link class="text-[#bb8e4a] font-bold text-xl hover:text-black dark:hover:text-white"
+          to="/">Home</router-link>
+        <router-link class="text-[#bb8e4a] font-bold text-xl hover:text-black dark:hover:text-white"
+          to="/Projects">Projects</router-link>
+        <router-link class="text-[#bb8e4a] font-bold text-xl hover:text-black dark:hover:text-white"
+          to="/Dashboard">Dashboard</router-link>
       </nav>
+      <!-- ✅ زر الوضع الليلي في الهيدر (يظهر فقط على الشاشات الكبيرة) -->
+      <button @click="toggleDarkMode" class="hidden md:block">
+        <svg v-if="!isDark" class="text-[#bb8e4a] cursor-pointer" width="28" height="28" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+        <svg v-else class="text-[#bb8e4a] cursor-pointer" width="28" height="28" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+        </svg>
+      </button>
 
-      <!-- Right Side -->
-      <div class="flex items-center gap-4">
-        <!-- Dark Mode Toggle -->
-        <button @click="toggleDarkMode">
-          <svg
-            v-if="!isDark"
-            class="text-[#bb8e4a] cursor-pointer"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-          </svg>
-          <svg
-            v-else
-            class="text-[#bb8e4a] cursor-pointer"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-          </svg>
-        </button>
-
-        <!-- زر فتح القائمة في الموبايل -->
-        <button
-          @click="toggleSidebar"
-          class="md:hidden text-[#bb8e4a] focus:outline-none"
-        >
-          ☰
-        </button>
-      </div>
+      <!-- أيقونة القائمة في الموبايل -->
+      <button @click="toggleSidebar" class="md:hidden text-[#bb8e4a] focus:outline-none">
+        ☰
+      </button>
     </header>
-
     <!-- ✅ المحتوى + السيدبار -->
     <div class="flex flex-1">
       <!-- Sidebar -->
-      <aside
-        :class="[
-          'fixed md:static top-16 left-0 w-44 bg-white dark:bg-gray-900 shadow-lg z-40 transition-transform duration-300',
-          isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
-        ]"
-        
-      >
+
+      <!-- ✅ الـ Sidebar -->
+      <aside :class="[
+        'fixed md:static top-16 left-0 w-56 bg-white dark:bg-gray-900 shadow-lg z-40 transition-transform duration-300',
+        isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
+      ]">
         <div
-          class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700 md:hidden"
-        >
+          class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-700 md:hidden">
           <h2 class="text-xl font-bold text-[#bb8e4a]">Menu</h2>
           <button @click="toggleSidebar" class="text-gray-600 dark:text-gray-300">
             ✖
@@ -98,37 +58,42 @@
         </div>
 
         <nav class="flex flex-col gap-4 p-4">
-          <router-link
-            class="text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white"
-            to="/Dashboard"
-            @click="closeOnMobile"
-          >
-            Dashboard
+          <!-- ✅ روابط الـ Header الآن تظهر هنا في الموبايل -->
+          <router-link class="md:hidden text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white" to="/"
+            @click="closeOnMobile">
+            Home
           </router-link>
 
-          <router-link
-            class="text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white"
-            to="/AdminProjects"
-            @click="closeOnMobile"
-          >
+          <router-link class="md:hidden text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white"
+            to="/Projects" @click="closeOnMobile">
             Projects
           </router-link>
 
-          <router-link
-            class="text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white"
-            to="/AdminDonate"
-            @click="closeOnMobile"
-          >
+          <router-link class="md:hidden text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white"
+            to="/Dashboard" @click="closeOnMobile">
+            Dashboard
+          </router-link>
+
+          <!-- ✅ روابط الـ Admin -->
+          <router-link class="text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white"
+            to="/AdminProjects" @click="closeOnMobile">
+            Admin Projects
+          </router-link>
+
+          <router-link class="text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white" to="/AdminDonate"
+            @click="closeOnMobile">
             Donations
           </router-link>
 
-          <router-link
-            class="text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white"
-            to="/AdminExpenses"
-            @click="closeOnMobile"
-          >
+          <router-link class="text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white"
+            to="/AdminExpenses" @click="closeOnMobile">
             Expenses
           </router-link>
+
+          <button @click="toggleDarkMode"
+            class="block md:hidden text-[#bb8e4a] font-bold py-2 px-3 rounded-lg border border-[#bb8e4a] hover:bg-[#bb8e4a] hover:text-white transition">
+            {{ isDark ? "☀️ Light Mode" : "🌙 Dark Mode" }}
+          </button>
         </nav>
       </aside>
 
