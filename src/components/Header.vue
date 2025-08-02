@@ -9,7 +9,6 @@
         <nav class="flex gap-6">
             <router-link class="text-[#bb8e4a] dark:text-[#bb8e4a] font-bold text-2xl hover:text-black dark:hover:text-white transition-colors" to="/">Home</router-link>
             <router-link class="text-[#bb8e4a] dark:text-[#bb8e4a] font-bold text-2xl hover:text-black dark:hover:text-white transition-colors" to="/Projects">Projects</router-link>
-            <router-link class="text-[#bb8e4a] dark:text-[#bb8e4a] font-bold text-2xl hover:text-black dark:hover:text-white transition-colors" to="/Donate">Donate</router-link>
             <router-link class="text-[#bb8e4a] dark:text-[#bb8e4a] font-bold text-2xl hover:text-black dark:hover:text-white transition-colors" to="/Dashboard">Dashboard</router-link>
         </nav>
 
