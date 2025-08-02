@@ -1,5 +1,5 @@
 <template>
-    <SideNaveBar />
+    <AdminLayout>
 
     <div class="min-h-screen flex flex-col items-center px-4 py-10">
         <!-- 🔹 العنوان -->
@@ -77,11 +77,12 @@
             </p>
         </div>
     </div>
+    </AdminLayout>
 </template>
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
-import SideNaveBar from "./components/SideNaveBar.vue";
+import AdminLayout from "./components/AdminLayout.vue";
 
 const projects = ref([]);
 const form = ref({

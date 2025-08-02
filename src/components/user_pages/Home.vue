@@ -1,5 +1,5 @@
 <template>
-    
+    <Header></Header>
 <main class="container mx-auto">
 
   <!-- Hero Section -->
@@ -147,3 +147,7 @@
 </main>
 
 </template>
+
+<script setup>
+import Header from './components/Header.vue';
+</script>

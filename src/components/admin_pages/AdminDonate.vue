@@ -1,6 +1,5 @@
 <template>
-  <SideNaveBar />
-
+<AdminLayout>
   <div class="container mx-auto px-4 py-10">
     <h2 class="text-3xl font-extrabold text-center mb-8">All Donations</h2>
 
@@ -108,11 +107,12 @@
       </div>
     </div>
   </div>
+  </AdminLayout>
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
-import SideNaveBar from "./components/SideNaveBar.vue";
+import AdminLayout from "./components/AdminLayout.vue";
 
 
 const donations = ref([]);

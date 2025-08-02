@@ -1,5 +1,5 @@
 <template>
-  <SideNaveBar />
+  <AdminLayout>
   <div class="container mx-auto px-4 py-10">
     <h2 class="text-3xl font-bold mb-6">Project Details</h2>
 
@@ -41,12 +41,14 @@
     </div>
     <p v-else class="text-gray-500">No expenses yet.</p>
   </div>
+  </AdminLayout>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import SideNaveBar from "./components/SideNaveBar.vue";
+import AdminLayout from "./components/AdminLayout.vue";
+import AdminLayout from "./components/AdminLayout.vue";
 
 const route = useRoute();
 const project = ref(null);

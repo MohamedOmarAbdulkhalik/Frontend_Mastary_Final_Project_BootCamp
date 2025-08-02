@@ -1,6 +1,5 @@
 <template>
-  <SideNaveBar />
-
+<AdminLayout>
   <div class="container mx-auto px-4 py-10">
     <h2 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">
       Manage Expenses
@@ -96,11 +95,12 @@
       </form>
     </div>
   </div>
+  </AdminLayout>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import SideNaveBar from "./components/SideNaveBar.vue";
+import AdminLayout from "./components/AdminLayout.vue";
 
 const projects = ref([]);
 const expenses = ref([]);

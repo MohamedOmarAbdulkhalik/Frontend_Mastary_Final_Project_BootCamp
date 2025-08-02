@@ -1,6 +1,6 @@
 <template>
 
-
+<Header></Header>
   <div class="container mx-auto px-4 py-10">
     <!-- ✅ التبرع العام -->
     <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg max-w-lg mx-auto mb-10">
@@ -138,6 +138,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import Header from './components/Header.vue';
 
 const projects = ref([]);
 const donations = ref([]);

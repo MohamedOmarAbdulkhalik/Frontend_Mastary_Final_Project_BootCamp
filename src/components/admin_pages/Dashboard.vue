@@ -1,5 +1,5 @@
 <template>
-  <SideNaveBar />
+  <AdminLayout>
 
   <div class="container mx-auto px-4 py-10 space-y-10">
     <!-- 🔹 البطاقات -->
@@ -51,11 +51,12 @@
       ])"
     />
   </div>
+</AdminLayout>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import SideNaveBar from "./components/SideNaveBar.vue";
+import AdminLayout from "./components/AdminLayout.vue";
 import DashboardCard from "./components/DashboardCard.vue";
 import DashboardTable from "./components/DashboardTable.vue";
 

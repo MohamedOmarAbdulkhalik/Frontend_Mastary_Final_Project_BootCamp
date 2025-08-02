@@ -3,7 +3,7 @@
 <template>
     <div class="flex flex-col min-h-screen">
     
-<Header></Header>
+
 <main class="flex-grow">
 <router-view/>
 </main>
