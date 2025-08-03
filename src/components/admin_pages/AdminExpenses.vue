@@ -5,7 +5,7 @@
         Manage Expenses
       </h2>
 
-      <!-- ✅ قسم اختيار المشروع (دائمًا في الوسط) -->
+      <!-- select project -->
       <div
         class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg max-w-lg w-full"
       >
@@ -26,7 +26,7 @@
         </select>
       </div>
 
-      <!-- ✅ عند اختيار مشروع -->
+      <!-- when selecting project -->
       <div
         v-if="selectedProject"
         class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg max-w-3xl w-full"
@@ -44,7 +44,7 @@
           ${{ selectedProject.fundsReceived - (selectedProject.expenses || 0) }}
         </p>
 
-        <!-- ✅ جدول المصروفات -->
+        <!-- expenses table -->
         <table class="w-full border border-gray-300 mb-8">
           <thead class="bg-gray-200 dark:bg-gray-700">
             <tr>
@@ -85,7 +85,7 @@
           </tbody>
         </table>
 
-        <!-- ✅ فورم إضافة / تعديل مصروف -->
+        <!-- form to add expenses and edit it-->
         <form @submit.prevent="saveExpense" class="space-y-3">
           <input
             v-model="expenseForm.description"
@@ -131,7 +131,7 @@ const expenseForm = ref({ description: "", amount: null });
 const editingExpenseId = ref(null);
 const errorMessage = ref("");
 
-// ✅ تحميل البيانات
+// load data
 onMounted(() => {
   const storedProjects = localStorage.getItem("projects");
   if (storedProjects) projects.value = JSON.parse(storedProjects);

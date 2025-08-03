@@ -3,7 +3,7 @@
   <div class="container mx-auto px-4 py-10">
     <h2 class="text-3xl p-4 font-extrabold text-center mb-8">All Donations</h2>
 <div class="flex flex-col gap-10">
-    <!-- ✅ التبرعات العامة -->
+    <!-- general donations -->
     <div class="bg-white dark:bg-gray-900 p-6 m-6 rounded-xl shadow-lg mb-12">
       <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">General Donations</h3>
 
@@ -41,7 +41,7 @@
       </table>
     </div>
 
-    <!-- ✅ التبرعات المرتبطة بالمشاريع -->
+    <!-- assinged donations -->
     <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
       <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Project Donations</h3>
 
@@ -72,7 +72,7 @@
       </table>
     </div>
 </div>
-    <!-- ✅ نافذة إسناد التبرع -->
+    <!-- assing donation window -->
     <div
       v-if="showAssignModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -168,19 +168,19 @@ const assignDonation = () => {
 
   if (!project) return;
 
-  // تحقق من أن المبلغ لا يتجاوز المبلغ المتبقي
+  // if condition to prevint more than needed donations
   if (donationToAssign.value.amount > getRemaining(project)) {
     alert(`This project can only receive up to $${getRemaining(project)}!`);
     return;
   }
 
-  // تحديث المشروع
+  // update project
   project.fundsReceived += donationToAssign.value.amount;
 
-  // تحديث التبرع
+  // update donation
   donationToAssign.value.projectId = project.id;
 
-  // حفظ البيانات
+  // save data
   localStorage.setItem("projects", JSON.stringify(projects.value));
   localStorage.setItem("donations", JSON.stringify(donations.value));
 

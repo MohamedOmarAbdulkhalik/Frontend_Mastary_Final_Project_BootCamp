@@ -11,7 +11,7 @@
       <p><strong>Expenses:</strong> ${{ project.expenses }}</p>
     </div>
 
-    <!-- ✅ التبرعات المرتبطة -->
+    <!-- project donations -->
     <h3 class="text-2xl font-bold mb-3">Donations</h3>
     <div v-if="projectDonations.length" class="mb-6 space-y-2">
       <div
@@ -26,7 +26,7 @@
     </div>
     <p v-else class="text-gray-500">No donations yet.</p>
 
-    <!-- ✅ المصروفات المرتبطة -->
+    <!-- project expenses -->
     <h3 class="text-2xl font-bold mb-3">Expenses</h3>
     <div v-if="projectExpenses.length" class="space-y-2">
       <div

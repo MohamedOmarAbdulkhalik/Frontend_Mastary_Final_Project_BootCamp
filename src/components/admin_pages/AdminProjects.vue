@@ -2,12 +2,11 @@
     <AdminLayout>
 
     <div class="min-h-screen flex flex-col items-center px-4 py-10">
-        <!-- 🔹 العنوان -->
         <h2 class="text-3xl md:text-4xl p-4 font-extrabold text-gray-900 mb-8 text-center">
             Manage Projects
         </h2>
 
-        <!-- 🔹 الفورم -->
+        <!-- Form -->
         <div
             class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg w-full max-w-md border border-gray-200 dark:border-gray-700">
             <h3 class="text-lg font-semibold mb-5 text-gray-800 dark:text-white text-center">
@@ -32,13 +31,13 @@
             </form>
         </div>
 
-        <!-- 🔹 مسافة بين الفورم والمشاريع -->
+        <!-- -->
         <div class="mt-14 w-full">
             <h3 class="text-2xl p-4 font-bold text-gray-800 dark:text-white mb-6 text-center">
                 Projects List
             </h3>
 
-            <!-- 🔹 عرض المشاريع -->
+            <!-- show projects -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div v-for="(project, index) in projects" :key="project.id"
                     class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 p-5 transition hover:shadow-lg">
