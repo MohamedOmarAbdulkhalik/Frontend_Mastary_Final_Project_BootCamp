@@ -2,8 +2,8 @@
 
 <Header></Header>
   <div class="container mx-auto px-4 py-10">
-    <!-- ✅ التبرع العام -->
-  <!-- ✅ التبرع العام -->
+
+  <!-- General Donations -->
 <div class="flex justify-center mb-10">
   <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg max-w-lg w-full">
     <h2 class="text-2xl p-4 font-bold text-gray-900 dark:text-white text-center mb-5">
@@ -39,12 +39,12 @@
 </div>
 
 
-    <!-- ✅ عنوان المشاريع -->
+
     <h2 class="text-3xl p-4 md:text-4xl font-extrabold text-gray-900 mb-10 text-center">
       Available Projects
     </h2>
 
-    <!-- ✅ عرض المشاريع -->
+    <!-- Show projects -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div
         v-for="(project, index) in projects"
@@ -58,7 +58,7 @@
           {{ project.description }}
         </p>
 
-        <!-- شريط التقدم -->
+        <!-- Progress par -->
         <div class="mb-3">
           <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
             <div
@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <!-- ✅ نافذة التبرع للمشاريع -->
+    <!-- donate to a single project -->
     <div
       v-if="showModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"

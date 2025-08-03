@@ -1,14 +1,14 @@
 <template>
   <div class="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
-    <!-- ✅ الهيدر -->
-    <!-- الهيدر -->
+
+    <!-- Header -->
     <header class="flex justify-between items-center px-4 py-3 bg-white dark:bg-black shadow-md relative z-50">
       <!-- Logo -->
       <div class="flex items-center gap-2">
         <img class="w-14" src="../../../../images/logo.webp" alt="Logo" />
       </div>
 
-      <!-- روابط التنقل (تظهر فقط على الشاشات الكبيرة) -->
+      <!-- Links in larg screen -->
       <nav class="hidden md:flex gap-6">
         <router-link class="text-[#bb8e4a] font-bold text-xl hover:text-black dark:hover:text-white"
           to="/">Home</router-link>
@@ -17,7 +17,7 @@
         <router-link class="text-[#bb8e4a] font-bold text-xl hover:text-black dark:hover:text-white"
           to="/Dashboard">Dashboard</router-link>
       </nav>
-      <!-- ✅ زر الوضع الليلي في الهيدر (يظهر فقط على الشاشات الكبيرة) -->
+      <!-- dark mode button -->
       <button @click="toggleDarkMode" class="hidden md:block">
         <svg v-if="!isDark" class="text-[#bb8e4a] cursor-pointer" width="28" height="28" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -35,16 +35,14 @@
         </svg>
       </button>
 
-      <!-- أيقونة القائمة في الموبايل -->
+      <!-- burger icon -->
       <button @click="toggleSidebar" class="md:hidden text-[#bb8e4a] focus:outline-none">
         ☰
       </button>
     </header>
-    <!-- ✅ المحتوى + السيدبار -->
+    <!-- Side bar -->
     <div class="flex flex-1">
-      <!-- Sidebar -->
 
-      <!-- ✅ الـ Sidebar -->
       <aside :class="[
         'fixed md:static top-16 left-0 w-56 bg-white dark:bg-gray-900 shadow-lg z-40 transition-transform duration-300',
         isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
@@ -58,7 +56,7 @@
         </div>
 
         <nav class="flex flex-col gap-4 p-4">
-          <!-- ✅ روابط الـ Header الآن تظهر هنا في الموبايل -->
+          <!-- links in mobile -->
           <router-link class="md:hidden text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white" to="/"
             @click="closeOnMobile">
             Home
@@ -74,7 +72,7 @@
             Dashboard
           </router-link>
 
-          <!-- ✅ روابط الـ Admin -->
+          <!-- admin links in mobile -->
           <router-link class="text-[#bb8e4a] font-bold text-lg hover:text-black dark:hover:text-white"
             to="/AdminProjects" @click="closeOnMobile">
             Admin Projects
@@ -97,13 +95,13 @@
         </nav>
       </aside>
 
-      <!-- ✅ Main Content -->
+      <!-- Main Content -->
       <main class="flex-1 ml-0 md:ml-64 p-4 transition-all duration-300 flex flex-col">
         <div class="flex-grow">
           <slot />
         </div>
 
-        <!-- ✅ Footer -->
+        <!--  Footer -->
         <footer class="bg-gray-900 text-white py-5 mt-8">
           <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
             <div>

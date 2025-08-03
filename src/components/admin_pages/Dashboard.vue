@@ -2,7 +2,7 @@
   <AdminLayout>
 
   <div class="container mx-auto px-4 py-10 space-y-10">
-    <!-- 🔹 البطاقات -->
+    <!-- cards -->
     <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
       <DashboardCard title="Total Projects" :value="projects.length" color="bg-blue-500" />
       <DashboardCard title="Uncompleted Projects" :value="uncompletedProjectsCount" color="bg-yellow-500" />
@@ -14,7 +14,7 @@
       <DashboardCard title="Remaining Non-Spent Funds" :value="'$' + remainingNonSpentFunds" color="bg-indigo-500" />
     </div>
 
-    <!-- 🔹 جدول المشاريع -->
+    <!-- projects tables-->
     <DashboardTable
       title="Projects Overview"
       :headers="['Name', 'Needed', 'Received', 'Expenses', 'Remaining']"
@@ -27,7 +27,7 @@
       ])"
     />
 
-    <!-- 🔹 جدول التبرعات -->
+    <!-- donations table-->
     <DashboardTable
       title="All Donations"
       :headers="['Donor', 'Amount', 'Project', 'Date']"
@@ -39,7 +39,7 @@
       ])"
     />
 
-    <!-- 🔹 جدول المصروفات -->
+    <!-- expenses table -->
     <DashboardTable
       title="All Expenses"
       :headers="['Project', 'Description', 'Amount', 'Date']"
